@@ -22,7 +22,7 @@ class HomeTap extends StatelessWidget {
                   child: Column(
                     children: [
                       CustomTextFormField(
-                        hint: 'Search',
+                        hint: 'Search.',
                         prefixIcon: IconlyLight.search,
                         filled: true,
                       )
