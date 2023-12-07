@@ -63,7 +63,7 @@ class _HomePageState extends State<HomePage> {
             BottomNavigationBarItem(
                 icon: Icon(IconlyBold.upload), label: 'Upload'),
             BottomNavigationBarItem(
-                icon: Icon(IconlyBold.scan), label: 'Scan'),
+                icon: Icon(IconlyBold.scan), label: 'Scan', backgroundColor: Colors.white),
             BottomNavigationBarItem(
                 icon: Icon(IconlyBold.notification), label: 'Notification'),
             BottomNavigationBarItem(

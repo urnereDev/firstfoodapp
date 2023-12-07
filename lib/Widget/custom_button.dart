@@ -1,4 +1,3 @@
-import 'package:firststore/Constants/colors.dart';
 import 'package:flutter/material.dart';
 
 class CustomButton extends StatelessWidget {

@@ -6,3 +6,4 @@ HexColor primary = HexColor('#1FCC79');
 HexColor white = HexColor('#FFFFFF');
 HexColor outline = HexColor('#D0DBEA');
 HexColor red = HexColor('#FF5842');
+HexColor form = HexColor('#F4F5F7');

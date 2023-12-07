@@ -11,7 +11,8 @@ class CustomTextFormField extends StatelessWidget {
       this.obscureText = false,
       this.validator,
       this.onChanged,
-      this.filled,});
+      this.filled = false,
+      this.enabled = true,});
 
   String hint;
   IconData prefixIcon;
@@ -20,7 +21,8 @@ class CustomTextFormField extends StatelessWidget {
   bool obscureText;
   String? Function(String?)? validator;
   Function(String)? onChanged;
-  bool? filled;
+  bool filled;
+  bool enabled;
 
   @override
   Widget build(BuildContext context) {
@@ -58,6 +60,7 @@ class CustomTextFormField extends StatelessWidget {
           suffixIcon:
               IconButton(icon: Icon(suffixIcon), onPressed: onTapSuffixIcon,),
           filled: filled,
+          enabled: enabled,
         ),
       ),
     );
