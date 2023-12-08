@@ -16,7 +16,7 @@ class _CustomProductItemState extends State<CustomProductItem> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 265,
       width: 165,
       child: Column(

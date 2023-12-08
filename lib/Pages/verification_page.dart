@@ -72,7 +72,7 @@ class _VerificationPageState extends State<VerificationPage> {
             CustomButton(
               onTap: () {
                 Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) => PasswordPage(),
+                  builder: (context) => const PasswordPage(),
                 ));
               },
               text: 'Verify',

@@ -101,7 +101,7 @@ class _NewPasswordPageState extends State<NewPasswordPage> {
               CircleAvatar(
                 radius: 10,
                 backgroundColor:
-                    atleast6 == false ? outline : Color(0xFFE3FFF1),
+                    atleast6 == false ? outline : const Color(0xFFE3FFF1),
                 child: Icon(
                   Icons.check,
                   size: 12,
@@ -126,7 +126,7 @@ class _NewPasswordPageState extends State<NewPasswordPage> {
               CircleAvatar(
                 radius: 10,
                 backgroundColor:
-                    contains == false ? outline : Color(0xFFE3FFF1),
+                    contains == false ? outline : const Color(0xFFE3FFF1),
                 child: Icon(
                   Icons.check,
                   size: 12,

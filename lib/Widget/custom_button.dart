@@ -34,7 +34,7 @@ class CustomButton extends StatelessWidget {
             fontFamily: 'Inter',
             fontSize: 15,
             fontWeight: FontWeight.bold,
-            color: colorBorder == null ? Colors.white : colorBorder,
+            color: colorBorder ?? Colors.white,
           ),
         ),
       ),

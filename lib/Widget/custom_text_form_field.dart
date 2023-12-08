@@ -12,7 +12,9 @@ class CustomTextFormField extends StatelessWidget {
       this.validator,
       this.onChanged,
       this.filled = false,
-      this.enabled = true,});
+      this.enabled = true,
+      this.controller,
+      this.onEditingComplete});
 
   String hint;
   IconData prefixIcon;
@@ -23,6 +25,9 @@ class CustomTextFormField extends StatelessWidget {
   Function(String)? onChanged;
   bool filled;
   bool enabled;
+  TextEditingController? controller;
+  Function()? onEditingComplete;
+
 
   @override
   Widget build(BuildContext context) {
@@ -62,6 +67,8 @@ class CustomTextFormField extends StatelessWidget {
           filled: filled,
           enabled: enabled,
         ),
+        controller: controller,
+        onEditingComplete: onEditingComplete,
       ),
     );
   }

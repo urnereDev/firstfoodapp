@@ -1,7 +1,4 @@
-import 'package:firststore/Pages/Taps/home_tap.dart';
 import 'package:firststore/Pages/home_page.dart';
-import 'package:firststore/Pages/sign_up_page.dart';
-import 'package:firststore/Pages/start_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {

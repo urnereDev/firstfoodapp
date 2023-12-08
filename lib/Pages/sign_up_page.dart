@@ -103,7 +103,7 @@ class _SignUpPageState extends State<SignUpPage> {
                   CustomButton(
                     onTap: () {
                       Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => VerificationPage(),
+                        builder: (context) => const VerificationPage(),
                       ));
                       setState(() {
                         key.currentState!.validate();
@@ -144,7 +144,7 @@ class _SignUpPageState extends State<SignUpPage> {
               CircleAvatar(
                 radius: 10,
                 backgroundColor:
-                    atleast6 == false ? outline : Color(0xFFE3FFF1),
+                    atleast6 == false ? outline : const Color(0xFFE3FFF1),
                 child: Icon(
                   Icons.check,
                   size: 12,
@@ -169,7 +169,7 @@ class _SignUpPageState extends State<SignUpPage> {
               CircleAvatar(
                 radius: 10,
                 backgroundColor:
-                    contains == false ? outline : Color(0xFFE3FFF1),
+                    contains == false ? outline : const Color(0xFFE3FFF1),
                 child: Icon(
                   Icons.check,
                   size: 12,

@@ -90,7 +90,7 @@ class _LoginPageState extends State<LoginPage> {
                             TextButton(
                               onPressed: () {
                                 Navigator.of(context).push(MaterialPageRoute(
-                                  builder: (context) => NewPasswordPage(),
+                                  builder: (context) => const NewPasswordPage(),
                                 ));
                               },
                               child: Text(
@@ -147,7 +147,7 @@ class _LoginPageState extends State<LoginPage> {
                           TextButton(
                             onPressed: () {
                               Navigator.of(context).push(MaterialPageRoute(
-                                builder: (context) => SignUpPage(),
+                                builder: (context) => const SignUpPage(),
                               ));
                             },
                             child: Text(
