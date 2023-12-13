@@ -19,7 +19,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     List<Widget> taps = [
-      HomeTap(),
+      const HomeTap(),
       const UploadTap(),
       const ScanTap(),
       const NotificationTap(),
@@ -72,11 +72,13 @@ class _HomePageState extends State<HomePage> {
         ),
         floatingActionButton: FloatingActionButton(
           onPressed: () {},
+          shape: CircleBorder(),
           backgroundColor: primary,
           elevation: 0,
           child: const Icon(
             IconlyBold.scan,
             size: 30,
+            color: Colors.white,
           ),
         ),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,

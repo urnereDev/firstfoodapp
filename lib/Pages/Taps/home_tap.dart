@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
 
 class HomeTap extends StatelessWidget {
-  HomeTap({super.key});
+  const HomeTap({super.key});
   static List previousSearch= [];
 
   @override
