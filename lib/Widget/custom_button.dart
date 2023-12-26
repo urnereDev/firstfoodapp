@@ -6,12 +6,14 @@ class CustomButton extends StatelessWidget {
       super.key,
       this.color,
       required this.text,
-      this.colorBorder});
+      this.colorBorder,
+      this.textColor});
 
   String? text;
   Color? color;
   void Function()? onTap;
   Color? colorBorder;
+  Color? textColor;
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +36,7 @@ class CustomButton extends StatelessWidget {
             fontFamily: 'Inter',
             fontSize: 15,
             fontWeight: FontWeight.bold,
-            color: colorBorder ?? Colors.white,
+            color: textColor ?? Colors.white,
           ),
         ),
       ),

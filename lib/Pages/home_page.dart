@@ -16,6 +16,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   int _currentIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     List<Widget> taps = [
@@ -40,7 +41,11 @@ class _HomePageState extends State<HomePage> {
               });
             } else if (index == 1) {
               setState(() {
-                _currentIndex = index;
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => UploadTap(),
+                  ),
+                );
               });
             } else if (index == 2) {
               setState(() {
@@ -59,11 +64,15 @@ class _HomePageState extends State<HomePage> {
           type: BottomNavigationBarType.fixed,
           items: const [
             BottomNavigationBarItem(
-                icon: Icon(IconlyBold.home), label: 'Home',),
+              icon: Icon(IconlyBold.home),
+              label: 'Home',
+            ),
             BottomNavigationBarItem(
                 icon: Icon(IconlyBold.upload), label: 'Upload'),
             BottomNavigationBarItem(
-                icon: Icon(IconlyBold.scan), label: 'Scan', backgroundColor: Colors.white),
+                icon: Icon(IconlyBold.scan),
+                label: 'Scan',
+                backgroundColor: Colors.white),
             BottomNavigationBarItem(
                 icon: Icon(IconlyBold.notification), label: 'Notification'),
             BottomNavigationBarItem(
