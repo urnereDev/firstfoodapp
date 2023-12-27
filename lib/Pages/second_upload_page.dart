@@ -1,4 +1,5 @@
 import 'package:firststore/Constants/colors.dart';
+import 'package:firststore/Pages/home_page.dart';
 import 'package:firststore/Widget/custom_button.dart';
 import 'package:firststore/Widget/custom_text_field_in_upload.dart';
 import 'package:flutter/material.dart';
@@ -24,7 +25,7 @@ class _SecondUploadPageState extends State<SecondUploadPage> {
           children: [
             Container(
               color: Colors.white,
-              padding: EdgeInsets.all(20),
+              padding: const EdgeInsets.all(20),
               child: Column(children: [
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -65,7 +66,7 @@ class _SecondUploadPageState extends State<SecondUploadPage> {
                     ),
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 15,
                 ),
                 Row(
@@ -85,7 +86,7 @@ class _SecondUploadPageState extends State<SecondUploadPage> {
                             foregroundColor:
                                 MaterialStateProperty.all(secondaryColor)),
                         onPressed: () {},
-                        icon: Icon(Icons.add),
+                        icon: const Icon(Icons.add),
                         label: Text(
                           'Group',
                           style: TextStyle(
@@ -97,23 +98,23 @@ class _SecondUploadPageState extends State<SecondUploadPage> {
                         ))
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 15,
                 ),
                 ListView.builder(
-                  physics: NeverScrollableScrollPhysics(),
+                  physics: const NeverScrollableScrollPhysics(),
                   shrinkWrap: true,
                   itemCount: ingredients.length,
                   itemBuilder: (context, index) => enterIngredient(index),
                 ),
                 ingredientButton(),
-                SizedBox(height: 8,),
+                const SizedBox(height: 8,),
 
               ]),
             ),
             Container(
               color: Colors.white,
-              padding: EdgeInsets.all(20),
+              padding: const EdgeInsets.all(20),
               child: Column(
                 children: [Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -128,20 +129,20 @@ class _SecondUploadPageState extends State<SecondUploadPage> {
                       setState(() {
                         steps.add(step(1));
                       });
-                    }, icon: Icon(Icons.add), label: Text('Add', style: TextStyle(
+                    }, icon: const Icon(Icons.add), label: Text('Add', style: TextStyle(
                       color: mainText,
                       fontFamily: 'Inter',
                       fontSize: 17,
                       fontWeight: FontWeight.w700,
                     ),))
                   ],),
-                  SizedBox(height: 15,),
+                  const SizedBox(height: 15,),
                   ListView.builder(
-                    physics: NeverScrollableScrollPhysics(),
+                    physics: const NeverScrollableScrollPhysics(),
                     shrinkWrap: true,
                     itemCount: steps.length,
                     itemBuilder: (context, index) => step(index),),
-                  SizedBox(height: 15,),
+                  const SizedBox(height: 15,),
                   Row(children: [
                     Expanded(
                       child: CustomButton(
@@ -151,12 +152,12 @@ class _SecondUploadPageState extends State<SecondUploadPage> {
                           Navigator.pop(context);
                       }, text: 'Back',),
                     ),
-                    SizedBox(width: 10,),
+                    const SizedBox(width: 10,),
                     Expanded(
                       child: CustomButton(
                           color: primary,
                           onTap: () {
-
+                            openDialog();
                       }, text: 'Done'),
                     )
                   ],)
@@ -180,7 +181,7 @@ class _SecondUploadPageState extends State<SecondUploadPage> {
         });
       },
       child: Padding(
-        padding: EdgeInsets.symmetric(vertical: 12),
+        padding: const EdgeInsets.symmetric(vertical: 12),
         child: CustomTextFieldInUpload(
           radius: 30,
           hint: 'Enter ingredient',
@@ -191,7 +192,7 @@ class _SecondUploadPageState extends State<SecondUploadPage> {
   }
 
   ingredientButton() {
-    return Padding(padding: EdgeInsets.symmetric(vertical: 12),
+    return Padding(padding: const EdgeInsets.symmetric(vertical: 12),
     child: InkWell(
       onTap: () {
         setState(() {
@@ -208,7 +209,7 @@ class _SecondUploadPageState extends State<SecondUploadPage> {
         child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-          Icon(Icons.add),
+          const Icon(Icons.add),
           Text('Ingredient', style: TextStyle(
             color: mainText,
             fontFamily: 'Inter',
@@ -237,19 +238,19 @@ class _SecondUploadPageState extends State<SecondUploadPage> {
             radius: 10,
             icon: Icons.drag_indicator),
             Container(
-              margin: EdgeInsets.only(top: 10, bottom: 10, left: 35, right: 35),
+              margin: const EdgeInsets.only(top: 10, bottom: 10, left: 35, right: 35),
               width: double.infinity,
               height: 30,
               decoration: BoxDecoration(color: form,
               borderRadius: BorderRadius.circular(10),),
-              child: Icon(IconlyBold.camera),
+              child: const Icon(IconlyBold.camera),
             )
           ],
         ),
         Align(alignment: Alignment.topLeft,child: CircleAvatar(
           backgroundColor: mainText,
           radius: 12,
-          child: Text('${index+1}',style: TextStyle(
+          child: Text('${index+1}',style: const TextStyle(
             fontSize: 12,
             color: Colors.white,
           ),),
@@ -257,4 +258,37 @@ class _SecondUploadPageState extends State<SecondUploadPage> {
       ],),
     );
   }
+
+  Future openDialog() {
+    return showDialog(context: context, builder: (context) => AlertDialog(
+      content: Container(
+        width: 327,
+        height: 458,
+        padding: EdgeInsets.all(20),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [Image.asset('lib/Assets/Images/image 8.png'),
+          Text('Upload Success',style: TextStyle(
+            color: mainText,
+            fontFamily: 'Inter',
+            fontSize: 22,
+            fontWeight: FontWeight.w700,
+          ),),
+          Text('Your recipe has been uploaded, you can see it on your profile', style: TextStyle(
+            color: mainText,
+            fontFamily: 'Inter',
+            fontSize: 15,
+            fontWeight: FontWeight.w500,
+          ),
+          textAlign: TextAlign.center,),
+          CustomButton(onTap: () {
+            Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage(),));
+          }, text: 'Back to Home',
+          color: primary,),],
+        ),
+      ),
+    ),);
+  }
 }
+
+
