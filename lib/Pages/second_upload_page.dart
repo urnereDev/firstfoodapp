@@ -108,63 +108,88 @@ class _SecondUploadPageState extends State<SecondUploadPage> {
                   itemBuilder: (context, index) => enterIngredient(index),
                 ),
                 ingredientButton(),
-                const SizedBox(height: 8,),
-
+                const SizedBox(
+                  height: 8,
+                ),
               ]),
             ),
             Container(
               color: Colors.white,
               padding: const EdgeInsets.all(20),
               child: Column(
-                children: [Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text('Steps', style: TextStyle(
-                      color: mainText,
-                      fontFamily: 'Inter',
-                      fontSize: 17,
-                      fontWeight: FontWeight.w700,
-                    ),),
-                    TextButton.icon(onPressed: () {
-                      setState(() {
-                        steps.add(step(1));
-                      });
-                    }, icon: const Icon(Icons.add), label: Text('Add', style: TextStyle(
-                      color: mainText,
-                      fontFamily: 'Inter',
-                      fontSize: 17,
-                      fontWeight: FontWeight.w700,
-                    ),))
-                  ],),
-                  const SizedBox(height: 15,),
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        'Steps',
+                        style: TextStyle(
+                          color: mainText,
+                          fontFamily: 'Inter',
+                          fontSize: 17,
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
+                      TextButton.icon(
+                          onPressed: () {
+                            setState(() {
+                              steps.add(step(1));
+                            });
+                          },
+                          icon: const Icon(Icons.add),
+                          label: Text(
+                            'Add',
+                            style: TextStyle(
+                              color: mainText,
+                              fontFamily: 'Inter',
+                              fontSize: 17,
+                              fontWeight: FontWeight.w700,
+                            ),
+                          ))
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 15,
+                  ),
                   ListView.builder(
                     physics: const NeverScrollableScrollPhysics(),
                     shrinkWrap: true,
                     itemCount: steps.length,
-                    itemBuilder: (context, index) => step(index),),
-                  const SizedBox(height: 15,),
-                  Row(children: [
-                    Expanded(
-                      child: CustomButton(
-                        textColor: mainText,
+                    itemBuilder: (context, index) => step(index),
+                  ),
+                  const SizedBox(
+                    height: 15,
+                  ),
+                  Row(
+                    children: [
+                      Expanded(
+                        child: CustomButton(
+                          height: 56,
+                          textColor: mainText,
                           color: form,
                           onTap: () {
-                          Navigator.pop(context);
-                      }, text: 'Back',),
-                    ),
-                    const SizedBox(width: 10,),
-                    Expanded(
-                      child: CustomButton(
-                          color: primary,
-                          onTap: () {
-                            openDialog();
-                      }, text: 'Done'),
-                    )
-                  ],)
+                            Navigator.pop(context);
+                          },
+                          text: 'Back',
+                        ),
+                      ),
+                      const SizedBox(
+                        width: 10,
+                      ),
+                      Expanded(
+                        child: CustomButton(
+                            height: 56,
+                            color: primary,
+                            onTap: () {
+                              openDialog();
+                            },
+                            text: 'Done'),
+                      )
+                    ],
+                  )
                 ],
               ),
             ),
-
           ],
         ),
       ),
@@ -174,7 +199,9 @@ class _SecondUploadPageState extends State<SecondUploadPage> {
   enterIngredient(int index) {
     return Dismissible(
       key: GlobalKey(),
-      direction: ingredients.length>1? DismissDirection.endToStart: DismissDirection.none,
+      direction: ingredients.length > 1
+          ? DismissDirection.endToStart
+          : DismissDirection.none,
       onDismissed: (direction) {
         setState(() {
           ingredients.removeAt(index);
@@ -192,103 +219,137 @@ class _SecondUploadPageState extends State<SecondUploadPage> {
   }
 
   ingredientButton() {
-    return Padding(padding: const EdgeInsets.symmetric(vertical: 12),
-    child: InkWell(
-      onTap: () {
-        setState(() {
-          ingredients.add(enterIngredient(1));
-        });
-      },
-      child: Container(
-        alignment: Alignment.center,
-        height: 50,
-        decoration: BoxDecoration(
-          border: Border.all(width: 1,color: secondaryColor),
-          borderRadius: BorderRadius.circular(25),
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 12),
+      child: InkWell(
+        onTap: () {
+          setState(() {
+            ingredients.add(enterIngredient(1));
+          });
+        },
+        child: Container(
+          alignment: Alignment.center,
+          height: 50,
+          decoration: BoxDecoration(
+            border: Border.all(width: 1, color: secondaryColor),
+            borderRadius: BorderRadius.circular(25),
+          ),
+          child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+            const Icon(Icons.add),
+            Text(
+              'Ingredient',
+              style: TextStyle(
+                color: mainText,
+                fontFamily: 'Inter',
+                fontSize: 15,
+                fontWeight: FontWeight.w500,
+              ),
+            )
+          ]),
         ),
-        child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-          const Icon(Icons.add),
-          Text('Ingredient', style: TextStyle(
-            color: mainText,
-            fontFamily: 'Inter',
-            fontSize: 15,
-            fontWeight: FontWeight.w500,
-          ),)
-        ]),
       ),
-    ),);
+    );
   }
 
   step(int index) {
     return Dismissible(
-      direction: steps.length>1 ? DismissDirection.endToStart : DismissDirection.none,
+      direction: steps.length > 1
+          ? DismissDirection.endToStart
+          : DismissDirection.none,
       key: GlobalKey(),
       onDismissed: (direction) {
         setState(() {
           steps.removeAt(index);
         });
       },
-      child: Stack(children: [
-        Column(
-          children: [
-            CustomTextFieldInUpload(hint: 'Tell a little about your food',
-            maxLines: 4,
-            radius: 10,
-            icon: Icons.drag_indicator),
-            Container(
-              margin: const EdgeInsets.only(top: 10, bottom: 10, left: 35, right: 35),
-              width: double.infinity,
-              height: 30,
-              decoration: BoxDecoration(color: form,
-              borderRadius: BorderRadius.circular(10),),
-              child: const Icon(IconlyBold.camera),
-            )
-          ],
-        ),
-        Align(alignment: Alignment.topLeft,child: CircleAvatar(
-          backgroundColor: mainText,
-          radius: 12,
-          child: Text('${index+1}',style: const TextStyle(
-            fontSize: 12,
-            color: Colors.white,
-          ),),
-      ),),
-      ],),
+      child: Stack(
+        children: [
+          Column(
+            children: [
+              CustomTextFieldInUpload(
+                  hint: 'Tell a little about your food',
+                  maxLines: 4,
+                  radius: 10,
+                  icon: Icons.drag_indicator),
+              Container(
+                margin: const EdgeInsets.only(
+                    top: 10, bottom: 10, left: 35, right: 35),
+                width: double.infinity,
+                height: 30,
+                decoration: BoxDecoration(
+                  color: form,
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: const Icon(IconlyBold.camera),
+              )
+            ],
+          ),
+          Align(
+            alignment: Alignment.topLeft,
+            child: CircleAvatar(
+              backgroundColor: mainText,
+              radius: 12,
+              child: Text(
+                '${index + 1}',
+                style: const TextStyle(
+                  fontSize: 12,
+                  color: Colors.white,
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
     );
   }
 
   Future openDialog() {
-    return showDialog(context: context, builder: (context) => AlertDialog(
-      content: Container(
-        width: 327,
-        height: 458,
-        padding: EdgeInsets.all(20),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [Image.asset('lib/Assets/Images/image 8.png'),
-          Text('Upload Success',style: TextStyle(
-            color: mainText,
-            fontFamily: 'Inter',
-            fontSize: 22,
-            fontWeight: FontWeight.w700,
-          ),),
-          Text('Your recipe has been uploaded, you can see it on your profile', style: TextStyle(
-            color: mainText,
-            fontFamily: 'Inter',
-            fontSize: 15,
-            fontWeight: FontWeight.w500,
+    return showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        content: Container(
+          width: 327,
+          height: 458,
+          padding: EdgeInsets.all(20),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Image.asset('lib/Assets/Images/image 8.png'),
+              Text(
+                'Upload Success',
+                style: TextStyle(
+                  color: mainText,
+                  fontFamily: 'Inter',
+                  fontSize: 22,
+                  fontWeight: FontWeight.w700,
+                ),
+              ),
+              Text(
+                'Your recipe has been uploaded, you can see it on your profile',
+                style: TextStyle(
+                  color: mainText,
+                  fontFamily: 'Inter',
+                  fontSize: 15,
+                  fontWeight: FontWeight.w500,
+                ),
+                textAlign: TextAlign.center,
+              ),
+              CustomButton(
+                height: 56,
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => HomePage(),
+                      ));
+                },
+                text: 'Back to Home',
+                color: primary,
+              ),
+            ],
           ),
-          textAlign: TextAlign.center,),
-          CustomButton(onTap: () {
-            Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage(),));
-          }, text: 'Back to Home',
-          color: primary,),],
         ),
       ),
-    ),);
+    );
   }
 }
-
-

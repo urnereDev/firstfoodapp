@@ -9,8 +9,7 @@ class StartPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-          children: [
+      body: Column(children: [
         Expanded(
           flex: 2,
           child: Image.asset(
@@ -51,6 +50,7 @@ class StartPage extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: CustomButton(
+                height: 56,
                 onTap: () {
                   Navigator.of(context).push(
                     MaterialPageRoute(

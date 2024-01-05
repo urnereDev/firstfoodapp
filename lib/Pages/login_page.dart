@@ -112,6 +112,7 @@ class _LoginPageState extends State<LoginPage> {
                   child: Column(
                     children: [
                       CustomButton(
+                        height: 56,
                         text: 'Login',
                         color: primary,
                         onTap: () {
@@ -129,6 +130,7 @@ class _LoginPageState extends State<LoginPage> {
                             color: secondaryColor),
                       ),
                       CustomButton(
+                        height: 56,
                         onTap: () {},
                         text: 'G Goggle',
                         color: red,

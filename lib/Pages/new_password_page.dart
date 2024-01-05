@@ -62,7 +62,8 @@ class _NewPasswordPageState extends State<NewPasswordPage> {
                 obscureText: obscure,
                 hint: 'Password',
                 prefixIcon: IconlyLight.lock,
-                suffixIcon: obscure == true ? IconlyLight.show : IconlyLight.hide,
+                suffixIcon:
+                    obscure == true ? IconlyLight.show : IconlyLight.hide,
                 onTapSuffixIcon: () {
                   setState(() {});
                   obscure = !obscure;
@@ -70,7 +71,12 @@ class _NewPasswordPageState extends State<NewPasswordPage> {
               ),
               passwordTerms(
                   contains: _containsANumber, atleast6: _atleastCharacter),
-              CustomButton(onTap: () {}, text: 'Done', color: primary,)
+              CustomButton(
+                height: 56,
+                onTap: () {},
+                text: 'Done',
+                color: primary,
+              )
             ],
           ),
         ),

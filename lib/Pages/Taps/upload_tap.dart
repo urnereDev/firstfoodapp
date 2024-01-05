@@ -101,6 +101,7 @@ class UploadTap extends StatelessWidget {
                   height: 15,
                 ),
                 CustomButton(
+                    height: 56,
                     color: primary,
                     onTap: () {
                       Navigator.of(context).push(

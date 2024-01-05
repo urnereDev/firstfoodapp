@@ -70,6 +70,7 @@ class _VerificationPageState extends State<VerificationPage> {
               ],
             ),
             CustomButton(
+              height: 56,
               onTap: () {
                 Navigator.of(context).push(MaterialPageRoute(
                   builder: (context) => const PasswordPage(),
@@ -79,6 +80,7 @@ class _VerificationPageState extends State<VerificationPage> {
               color: primary,
             ),
             CustomButton(
+              height: 56,
               onTap: () {},
               text: 'Send Again',
               colorBorder: secondaryColor,

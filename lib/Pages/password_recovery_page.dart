@@ -49,7 +49,12 @@ class _PasswordPageState extends State<PasswordPage> {
                 },
                 hint: 'Email',
                 prefixIcon: IconlyLight.message),
-            CustomButton(onTap: () {}, text: 'Sign In', color: primary,)
+            CustomButton(
+              height: 56,
+              onTap: () {},
+              text: 'Sign In',
+              color: primary,
+            )
           ],
         ),
       ),

@@ -71,9 +71,9 @@ class _SignUpPageState extends State<SignUpPage> {
                         CustomTextFormField(
                           onChanged: (value) {
                             setState(() {
-                              _atleastCharacter = value.length < 6 ? false : true;
-                              _containsANumber =
-                                  numberRegExp.hasMatch(value);
+                              _atleastCharacter =
+                                  value.length < 6 ? false : true;
+                              _containsANumber = numberRegExp.hasMatch(value);
                             });
                           },
                           validator: (value) {
@@ -101,6 +101,7 @@ class _SignUpPageState extends State<SignUpPage> {
                     ),
                   ),
                   CustomButton(
+                    height: 56,
                     onTap: () {
                       Navigator.of(context).push(MaterialPageRoute(
                         builder: (context) => const VerificationPage(),

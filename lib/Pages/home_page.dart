@@ -23,7 +23,7 @@ class _HomePageState extends State<HomePage> {
       const HomeTap(),
       const UploadTap(),
       const ScanTap(),
-      const NotificationTap(),
+      NotificationTap(),
       const ProfileTap(),
     ];
     return SafeArea(
