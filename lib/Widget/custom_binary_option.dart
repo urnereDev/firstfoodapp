@@ -2,7 +2,11 @@ import 'package:firststore/Constants/colors.dart';
 import 'package:flutter/material.dart';
 
 class CustomBinaryOption extends StatefulWidget {
-  const CustomBinaryOption({super.key});
+  CustomBinaryOption(
+      {super.key, this.leftText = 'Left', this.rightText = 'Right'});
+
+  String leftText;
+  String rightText;
 
   @override
   State<CustomBinaryOption> createState() => _CustomBinaryOptionState();
@@ -27,7 +31,7 @@ class _CustomBinaryOptionState extends State<CustomBinaryOption> {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   Text(
-                    'Left',
+                    widget.leftText,
                     style: TextStyle(
                       height: 5,
                       fontFamily: 'Inter',
@@ -55,7 +59,7 @@ class _CustomBinaryOptionState extends State<CustomBinaryOption> {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   Text(
-                    'Right',
+                    widget.rightText,
                     style: TextStyle(
                       height: 5,
                       fontFamily: 'Inter',

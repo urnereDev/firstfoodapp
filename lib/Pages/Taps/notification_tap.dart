@@ -3,18 +3,26 @@ import 'package:firststore/Widget/custom_follow_notification.dart';
 import 'package:firststore/Widget/custom_liked_notification.dart';
 import 'package:flutter/material.dart';
 
-class NotificationTap extends StatelessWidget {
-  List newItem = ['follow'];
-  List todayItem = ['liked', 'follow', 'liked'];
-  List yesterdayItem = ['follow', 'follow'];
+class NotificationTap extends StatefulWidget {
 
-  NotificationTap({super.key});
+  const NotificationTap({super.key});
+
+  @override
+  State<NotificationTap> createState() => _NotificationTapState();
+}
+
+class _NotificationTapState extends State<NotificationTap> {
+  List newItem = ['follow'];
+
+  List todayItem = ['liked', 'follow', 'liked'];
+
+  List yesterdayItem = ['follow', 'follow'];
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(child: Scaffold(
       body: Padding(
-        padding: EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(8.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -29,8 +37,8 @@ class NotificationTap extends StatelessWidget {
               itemCount: newItem.length,
               itemBuilder: (context, index) =>
               newItem[index] == 'follow'
-                  ? CustomFollowNotification()
-                  : CustomLikedNotification(),),
+                  ? const CustomFollowNotification()
+                  : const CustomLikedNotification(),),
             Text('Today', style: TextStyle(
               fontFamily: 'Inter',
               fontSize: 17,
@@ -42,8 +50,8 @@ class NotificationTap extends StatelessWidget {
               itemCount: todayItem.length,
               itemBuilder: (context, index) =>
               todayItem[index] == 'follow'
-                  ? CustomFollowNotification()
-                  : CustomLikedNotification(),),
+                  ? const CustomFollowNotification()
+                  : const CustomLikedNotification(),),
             Text('Yesterday', style: TextStyle(
               fontFamily: 'Inter',
               fontSize: 17,
@@ -55,8 +63,8 @@ class NotificationTap extends StatelessWidget {
               itemCount: yesterdayItem.length,
               itemBuilder: (context, index) =>
               yesterdayItem[index] == 'follow'
-                  ? CustomFollowNotification()
-                  : CustomLikedNotification(),),
+                  ? const CustomFollowNotification()
+                  : const CustomLikedNotification(),),
           ],
         ),
       ),

@@ -56,14 +56,14 @@ class UploadTap extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 15,
             ),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 addCoverPhoto(),
-                SizedBox(
+                const SizedBox(
                   height: 15,
                 ),
                 Text(
@@ -76,7 +76,7 @@ class UploadTap extends StatelessWidget {
                   ),
                 ),
                 CustomTextFieldInUpload(hint: 'Enter food name'),
-                SizedBox(
+                const SizedBox(
                   height: 15,
                 ),
                 Text(
@@ -93,11 +93,11 @@ class UploadTap extends StatelessWidget {
                   radius: 10,
                   maxLines: 4,
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 15,
                 ),
-                CustomSlider(),
-                SizedBox(
+                const CustomSlider(),
+                const SizedBox(
                   height: 15,
                 ),
                 CustomButton(
@@ -106,7 +106,7 @@ class UploadTap extends StatelessWidget {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => SecondUploadPage(),
+                          builder: (context) => const SecondUploadPage(),
                         ),
                       );
                     },
@@ -124,15 +124,15 @@ class UploadTap extends StatelessWidget {
       onTap: () {},
       child: DottedBorder(
           borderType: BorderType.RRect,
-          radius: Radius.circular(10),
+          radius: const Radius.circular(10),
           strokeWidth: 2,
-          dashPattern: [15, 5],
+          dashPattern: const [15, 5],
           color: outline,
           child: SizedBox(
             width: double.infinity,
             height: 160,
             child: Padding(
-              padding: EdgeInsets.all(20),
+              padding: const EdgeInsets.all(20),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [

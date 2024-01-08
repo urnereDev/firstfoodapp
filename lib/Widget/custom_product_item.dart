@@ -1,6 +1,8 @@
 import 'dart:ui';
 
 import 'package:firststore/Constants/colors.dart';
+import 'package:firststore/Pages/Taps/profile_tap.dart';
+import 'package:firststore/Pages/item_detail_page.dart';
 import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
 
@@ -19,11 +21,13 @@ class _CustomProductItemState extends State<CustomProductItem> {
     return SizedBox(
       height: 265,
       width: 165,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
+      child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         InkWell(
-          onTap: () {},
+          onTap: () {
+            Navigator.of(context).push(MaterialPageRoute(
+              builder: (context) => ProfileTap(),
+            ));
+          },
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 10),
             child: Row(
@@ -57,14 +61,21 @@ class _CustomProductItemState extends State<CustomProductItem> {
           children: [
             Padding(
               padding: const EdgeInsets.all(10.0),
-              child: Container(
-                alignment: Alignment.centerLeft,
-                width: 151,
-                height: 151,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(16),
+              child: InkWell(
+                onTap: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => ItemDetailPage(),
+                  ));
+                },
+                child: Container(
+                  alignment: Alignment.centerLeft,
+                  width: 151,
+                  height: 151,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(16),
+                  ),
+                  child: Image.asset('lib/Assets/Images/Rectangle 188.png'),
                 ),
-                child: Image.asset('lib/Assets/Images/Rectangle 188.png'),
               ),
             ),
             Positioned(
@@ -75,7 +86,7 @@ class _CustomProductItemState extends State<CustomProductItem> {
                   InkWell(
                     onTap: () {
                       setState(() {
-                        favorite=!favorite;
+                        favorite = !favorite;
                       });
                     },
                     child: ClipRRect(
@@ -96,15 +107,16 @@ class _CustomProductItemState extends State<CustomProductItem> {
                               color: Colors.white.withOpacity(0.10),
                             ),
                             child: Center(
-                                child: favorite == true
-                                    ? const Icon(
-                                        IconlyLight.heart,
-                                        color: Colors.white,
-                                      )
-                                    : const Icon(
-                                        IconlyLight.heart,
-                                        color: Colors.red,
-                                      ),),
+                              child: favorite == true
+                                  ? const Icon(
+                                      IconlyLight.heart,
+                                      color: Colors.white,
+                                    )
+                                  : const Icon(
+                                      IconlyLight.heart,
+                                      color: Colors.red,
+                                    ),
+                            ),
                           ),
                         ),
                       ),
@@ -117,23 +129,28 @@ class _CustomProductItemState extends State<CustomProductItem> {
         ),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 10),
-          child: Text('Pancake', style: TextStyle(
-            fontFamily: 'Inter',
-            fontSize: 17,
-            color: mainText,
-            fontWeight: FontWeight.w700
-          ),),
+          child: Text(
+            'Pancake',
+            style: TextStyle(
+                fontFamily: 'Inter',
+                fontSize: 17,
+                color: mainText,
+                fontWeight: FontWeight.w700),
+          ),
         ),
         const SizedBox(
           height: 5,
         ),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 10),
-          child: Text('Food • > 60 mins',style: TextStyle(
-            fontFamily: 'Inter',
-            fontSize: 15,
-            color: secondaryColor,
-          ),),
+          child: Text(
+            'Food • > 60 mins',
+            style: TextStyle(
+              fontFamily: 'Inter',
+              fontSize: 15,
+              color: secondaryColor,
+            ),
+          ),
         ),
       ]),
     );

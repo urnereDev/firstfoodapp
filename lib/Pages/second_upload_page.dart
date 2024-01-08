@@ -310,7 +310,7 @@ class _SecondUploadPageState extends State<SecondUploadPage> {
         content: Container(
           width: 327,
           height: 458,
-          padding: EdgeInsets.all(20),
+          padding: const EdgeInsets.all(20),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -340,7 +340,7 @@ class _SecondUploadPageState extends State<SecondUploadPage> {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => HomePage(),
+                        builder: (context) => const HomePage(),
                       ));
                 },
                 text: 'Back to Home',

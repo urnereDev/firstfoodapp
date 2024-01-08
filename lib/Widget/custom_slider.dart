@@ -37,13 +37,13 @@ class _CustomSliderState extends State<CustomSlider> {
             ),
           ],
         ),
-        SizedBox(
+        const SizedBox(
           height: 15,
         ),
         Column(
           children: [
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20),
+              padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [

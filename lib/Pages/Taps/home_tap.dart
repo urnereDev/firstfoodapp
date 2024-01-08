@@ -59,7 +59,7 @@ class HomeTap extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(horizontal: 20),
                   child: Column(
                     children: [
-                      const CustomBinaryOption(),
+                      CustomBinaryOption(),
                       Expanded(
                         child: GridView.count(
                           crossAxisCount: 2,

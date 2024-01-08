@@ -36,7 +36,7 @@ class _CustomLikedNotificationState extends State<CustomLikedNotification> {
             ],
           ),
         ),
-        SizedBox(width: 10,),
+        const SizedBox(width: 10,),
         Expanded(
           child: Column(
             mainAxisSize: MainAxisSize.min,

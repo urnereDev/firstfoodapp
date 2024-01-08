@@ -20,7 +20,7 @@ class _CustomFollowNotificationState extends State<CustomFollowNotification> {
           radius: 25,
           child: Image.asset('lib/Assets/Images/Avatar.png'),
         ),
-        SizedBox(
+        const SizedBox(
           width: 15,
         ),
         Column(

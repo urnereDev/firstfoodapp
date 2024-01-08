@@ -23,8 +23,8 @@ class _HomePageState extends State<HomePage> {
       const HomeTap(),
       const UploadTap(),
       const ScanTap(),
-      NotificationTap(),
-      const ProfileTap(),
+      const NotificationTap(),
+      ProfileTap(),
     ];
     return SafeArea(
       child: Scaffold(
@@ -43,7 +43,7 @@ class _HomePageState extends State<HomePage> {
               setState(() {
                 Navigator.of(context).push(
                   MaterialPageRoute(
-                    builder: (context) => UploadTap(),
+                    builder: (context) => const UploadTap(),
                   ),
                 );
               });
@@ -81,7 +81,7 @@ class _HomePageState extends State<HomePage> {
         ),
         floatingActionButton: FloatingActionButton(
           onPressed: () {},
-          shape: CircleBorder(),
+          shape: const CircleBorder(),
           backgroundColor: primary,
           elevation: 0,
           child: const Icon(
