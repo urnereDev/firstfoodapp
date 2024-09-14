@@ -1,16 +1,24 @@
-# firststoreproject
+# FirstStore Flutter Uygulaması
 
-A new Flutter project.
+Bu proje, Flutter kullanılarak geliştirilmiş basit bir e-ticaret uygulamasıdır. Uygulama, kullanıcıların ürünleri görüntülemesine ve satın almasına olanak tanır.
 
-## Getting Started
+## Özellikler
 
-This project is a starting point for a Flutter application.
+- Ürün listesi görüntüleme
+- Ürün detayları
+- Sepete ekleme
+- Sipariş oluşturma
 
-A few resources to get you started if this is your first Flutter project:
+## Kurulum
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+1. Bu depoyu klonlayın
+2. Gerekli bağımlılıkları yüklemek için `flutter pub get` komutunu çalıştırın
+3. Uygulamayı başlatmak için `flutter run` komutunu kullanın
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Katkıda Bulunma
+
+Katkılarınızı memnuniyetle karşılıyoruz! Lütfen değişiklik yapmadan önce bir konu açın.
+
+## Lisans
+
+Bu proje MIT lisansı altında lisanslanmıştır. Daha fazla bilgi için `LICENSE` dosyasına bakın.
